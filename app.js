@@ -24,7 +24,7 @@ else if (guess.value>luckyNum){
     numbers.push(guess.value);
     numbers.sort(function(a,b){return a-b});
     x = numbers.indexOf(guess.value);
-    p2.innerText = `Please enter a smaller number, between ${numbers[x-1]} and ${numbers[x]}`
+    p2.innerText = `Please enter a smaller number`
     attempts10.innerText=Number(attempts10.innerText)-1
     if(attempts10.innerText==0){
         p2.innerText=`Sorry, you failed. The number was ${luckyNum}`;
@@ -39,7 +39,7 @@ p2.style.fontSize="2rem";
 numbers.push(guess.value);
 numbers.sort(function(a,b){return a-b});
 x = numbers.indexOf(guess.value);
-p2.innerText=`Please enter a greater number, between ${numbers[x]} and ${numbers[x+1]}`
+p2.innerText=`Please enter a greater number`
 attempts10.innerText=Number(attempts10.innerText)-1
 if(attempts10.innerText==0){
     p2.innerText=`Sorry, you failed. The number was ${luckyNum}`
@@ -51,9 +51,7 @@ if(attempts10.innerText==0){
 })
 
 playAgain.addEventListener("click", ()=>{
-    attempts10.innerText="10";
-    attempts.style.display = "flex";
-    playAgain.style.display = "none";
-    p2.innerText="Write the number"
-    numbers=[0,100]
+    location.reload();
     })
+
+  
